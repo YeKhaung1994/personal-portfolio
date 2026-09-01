@@ -26,10 +26,10 @@
                 <div class="home-content">
                     <p class="kicker">// software developer</p>
                     <h1>Hi, I'm Ye Khaung.</h1>
-                    <p class="home-tagline">I build clean, efficient web applications.</p>
+                    <p class="home-tagline">I turn complex problems into clean, fast web applications.</p>
                     <p class="home-intro">
-                        Seven years of turning ideas into real-world products across the stack —
-                        from Vue and React frontends to ASP.NET Core backends.
+                        Full-stack developer with seven years of shipping products end to end —
+                        Vue and React on the front, C# and ASP.NET Core behind the scenes.
                     </p>
                     <div class="home-actions">
                         <a href="#projects" class="btn btn-primary">View projects</a>
@@ -152,18 +152,21 @@
                     </div>
                     <div class="window-body">
                         <p>
-                            I'm a passionate software developer with a strong focus on frontend and
-                            backend development. I love building clean, efficient, user-friendly
-                            applications that address real-world problems.
+                            I'm Ye Khaung, a full-stack developer who cares as much about how
+                            software feels to use as how it's built. The best products are the
+                            ones nobody has to think about — fast, clear, and reliable — and
+                            that's the standard I build to.
                         </p>
                         <p>
-                            Over the past seven years I've shipped products across the whole
-                            stack — from single-page apps to APIs and database design — always
-                            following best practices and continuously improving my craft.
+                            Over the past seven years I've taken products from first idea to
+                            production: single-page apps in Vue, React, and Angular; APIs in
+                            C# and ASP.NET Core; and the SQL Server and PostgreSQL databases
+                            underneath. I ship in small, tested steps and leave every codebase
+                            clearer than I found it.
                         </p>
                         <p>
-                            When I'm not coding you'll find me exploring new music, playing football,
-                            or diving into emerging technologies.
+                            Away from the keyboard, I'm usually chasing new music, a football,
+                            or whatever technology is about to change how we build.
                         </p>
                         <div class="skill-groups">
                             <div class="skill-group">
@@ -301,8 +304,8 @@
 
                 <pre v-else-if="dialogView === 'about'" class="terminal-body"><code>{
   <span class="tk">"bio"</span>: [
-    <span class="tv">"Passionate software developer, frontend and backend."</span>,
-    <span class="tv">"Seven years shipping products across the whole stack."</span>,
+    <span class="tv">"Full-stack developer — builds software people don't have to think about."</span>,
+    <span class="tv">"Seven years taking products from first idea to production."</span>,
     <span class="tv">"Off duty: new music, football, emerging tech."</span>
   ],
   <span class="tk">"skills"</span>: {
