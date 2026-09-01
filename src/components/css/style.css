@@ -23,6 +23,11 @@
     --tint-bg: rgba(93, 202, 165, 0.08);
     --tint-border: rgba(93, 202, 165, 0.25);
     --glow: rgba(93, 202, 165, 0.12);
+    --glass-inner: rgba(255, 255, 255, 0.04);
+    --glass-inner-border: rgba(148, 163, 184, 0.14);
+    --aurora-1: rgba(93, 202, 165, 0.2);
+    --aurora-2: rgba(76, 139, 245, 0.15);
+    --aurora-3: rgba(224, 175, 104, 0.09);
     color-scheme: dark;
 
     --font-ui: 'Inter', -apple-system, 'Segoe UI', sans-serif;
@@ -55,6 +60,11 @@
     --tint-bg: rgba(15, 110, 86, 0.06);
     --tint-border: rgba(15, 110, 86, 0.25);
     --glow: rgba(15, 110, 86, 0.08);
+    --glass-inner: rgba(255, 255, 255, 0.5);
+    --glass-inner-border: rgba(26, 26, 26, 0.08);
+    --aurora-1: rgba(15, 110, 86, 0.13);
+    --aurora-2: rgba(59, 130, 246, 0.11);
+    --aurora-3: rgba(180, 83, 9, 0.07);
     color-scheme: light;
 }
 
@@ -77,6 +87,29 @@ body {
     color: var(--text);
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
+}
+
+/* ambient aurora light behind the page — gives the glass something
+   to refract; drifts slowly (compositor-only transform animation) */
+body::before {
+    content: '';
+    position: fixed;
+    inset: -20%;
+    z-index: -1;
+    background:
+        radial-gradient(38% 45% at 18% 22%, var(--aurora-1), transparent 70%),
+        radial-gradient(42% 48% at 82% 12%, var(--aurora-2), transparent 70%),
+        radial-gradient(36% 42% at 68% 78%, var(--aurora-3), transparent 70%),
+        radial-gradient(30% 36% at 10% 86%, var(--aurora-2), transparent 70%);
+    filter: blur(64px);
+    animation: aurora-drift 28s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes aurora-drift {
+    to {
+        transform: translate3d(4%, -3%, 0) rotate(5deg) scale(1.1);
+    }
 }
 
 section {
@@ -124,14 +157,15 @@ a {
     gap: 16px;
     padding: 0 12px 0 18px;
     background: var(--header-bg);
-    backdrop-filter: blur(22px) saturate(1.8);
-    -webkit-backdrop-filter: blur(22px) saturate(1.8);
+    backdrop-filter: blur(28px) saturate(1.9);
+    -webkit-backdrop-filter: blur(28px) saturate(1.9);
     border: 1px solid var(--glass-border);
     border-radius: 18px;
     box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.1),
         0 12px 32px rgba(0, 0, 0, 0.22),
         inset 0 1px 0 var(--glass-highlight),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.06);
+        inset 0 -1px 0 rgba(0, 0, 0, 0.08);
 }
 
 /* diagonal light sheen across the glass */
@@ -196,8 +230,9 @@ a {
     justify-content: center;
     width: 44px;
     height: 44px;
-    background: none;
-    border: 1px solid var(--border);
+    background: var(--glass-inner);
+    box-shadow: inset 0 1px 0 var(--glass-highlight);
+    border: 1px solid var(--glass-inner-border);
     border-radius: 8px;
     cursor: pointer;
     color: var(--text);
@@ -245,9 +280,12 @@ a {
 /* empty image slot: glass circle awaiting a photo */
 .avatar-blank {
     background: var(--card-glass);
-    backdrop-filter: blur(22px) saturate(1.8);
-    -webkit-backdrop-filter: blur(22px) saturate(1.8);
+    backdrop-filter: blur(28px) saturate(1.9);
+    -webkit-backdrop-filter: blur(28px) saturate(1.9);
     border: 1px solid var(--glass-border);
+    box-shadow:
+        inset 0 1px 0 var(--glass-highlight),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
 }
 
 .sr-only {
@@ -335,7 +373,9 @@ a {
 }
 
 .btn-ghost {
-    border: 1px solid var(--border);
+    background: var(--glass-inner);
+    box-shadow: inset 0 1px 0 var(--glass-highlight);
+    border: 1px solid var(--glass-inner-border);
     color: var(--text);
 }
 
@@ -397,14 +437,21 @@ a {
 .window {
     position: relative;
     background: var(--card-glass);
-    backdrop-filter: blur(22px) saturate(1.8);
-    -webkit-backdrop-filter: blur(22px) saturate(1.8);
+    backdrop-filter: blur(28px) saturate(1.9);
+    -webkit-backdrop-filter: blur(28px) saturate(1.9);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.12),
         0 24px 64px rgba(0, 0, 0, 0.35),
-        inset 0 1px 0 var(--glass-highlight);
+        inset 0 1px 0 var(--glass-highlight),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+.window:hover {
+    border-color: var(--tint-border);
 }
 
 /* diagonal light sheen across the glass */
@@ -581,16 +628,21 @@ span.win-btn {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    background: var(--bg);
-    border: 1px solid var(--border);
+    background: var(--glass-inner);
+    border: 1px solid var(--glass-inner-border);
     border-radius: var(--radius);
     padding: 28px;
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    box-shadow: inset 0 1px 0 var(--glass-highlight);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .project-card:hover {
     transform: translateY(-4px);
     border-color: var(--accent);
+    box-shadow:
+        inset 0 1px 0 var(--glass-highlight),
+        0 12px 32px rgba(0, 0, 0, 0.18),
+        0 0 24px var(--glow);
 }
 
 .project-card h3 {
@@ -658,6 +710,70 @@ span.win-btn {
 
 .skill-group .tags {
     padding-left: 16px;
+}
+
+.about-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px 24px;
+    margin-top: 40px;
+}
+
+.timeline {
+    list-style: none;
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 20px;
+    border-left: 1px solid var(--border);
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -4.5px;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.timeline-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 12px;
+}
+
+.timeline-head h4 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.timeline-period {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--accent);
+}
+
+.timeline-org {
+    color: var(--text);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+.timeline-desc {
+    color: var(--text-muted);
+    font-size: 0.9375rem;
+    margin-top: 4px;
+    max-width: 60ch;
 }
 
 /* ============================================================
@@ -774,9 +890,9 @@ span.win-btn {
     align-items: center;
     justify-content: center;
     padding: 24px;
-    background: rgba(4, 8, 18, 0.6);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: rgba(4, 8, 18, 0.55);
+    backdrop-filter: blur(18px) saturate(1.3);
+    -webkit-backdrop-filter: blur(18px) saturate(1.3);
     animation: backdrop-in 0.25s ease both;
 }
 
