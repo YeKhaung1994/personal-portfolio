@@ -15,7 +15,7 @@ UX details: sticky translucent header with a scroll-progress bar (CSS `animation
 
 ## Design System
 
-The visual language lives in [.claude/skills/portfolio-design/SKILL.md](.claude/skills/portfolio-design/SKILL.md) — a dark analogous-blue palette following the 60-30-10 rule, Inter + JetBrains Mono typography, an 8px spacing system, and WCAG AA contrast rules. All colors are CSS custom properties on `:root` in `src/components/css/style.css`. Follow that skill for any UI change.
+A dark analogous-blue palette following the 60-30-10 rule, Inter + JetBrains Mono typography, an 8px spacing system, and WCAG AA contrast rules. All colors are CSS custom properties on `:root` in `src/components/css/style.css`.
 
 ## Tech Stack
 
@@ -60,5 +60,5 @@ npm run lint
 
 ## Customization
 
-- **Projects** — add `project-card` blocks in `src/components/views/index.vue`: title, 1–2 sentence description, tech tags, and a link (see the design skill for the rules).
+- **Projects** — add `project-card` blocks in `src/components/views/index.vue`: title, 1–2 sentence description, tech tags, and a link.
 - **Colors / spacing / type** — change the CSS custom properties at the top of `src/components/css/style.css`; components never hard-code values.
