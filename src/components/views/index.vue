@@ -52,6 +52,7 @@
                     <div class="avatar-wrap">
                         <!-- temporary Flaticon avatar (attribution in footer) — swap src to ../../assets/avatar.jpg for the real photo -->
                         <img class="avatar" src="../../assets/avatar-temp.png" alt="Illustrated avatar of Ye Khaung" width="112" height="112">
+                        <!-- hidden for now — uncomment to restore the circular status text
                         <svg class="avatar-ring-text" viewBox="0 0 180 180" aria-hidden="true">
                             <defs>
                                 <path id="ring-path" d="M90,90 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0" />
@@ -59,6 +60,7 @@
                             <text><textPath href="#ring-path" textLength="476">OPEN TO OPPORTUNITIES • OPEN TO OPPORTUNITIES • </textPath></text>
                         </svg>
                         <span class="sr-only">Open to opportunities</span>
+                        -->
                     </div>
                     <div class="terminal">
                         <div class="terminal-bar">
