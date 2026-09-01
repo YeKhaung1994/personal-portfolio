@@ -45,6 +45,32 @@ export function setupNavLinks() {
     sections.forEach(section => observer.observe(section));
 }
 
+// json-card boot animation: the profile typewriter and the window
+// title/body prints run only while .play is set — added when a card
+// enters the viewport, removed once it fully leaves so the next
+// scroll-in replays it from the start
+export function setupCardReplay() {
+    const cards = document.querySelectorAll('.terminal-typing, .window-anim');
+    if (!cards.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+        cards.forEach(card => card.classList.add('play'));
+        return;
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.intersectionRatio >= 0.2) {
+                entry.target.classList.add('play');
+            } else if (entry.intersectionRatio === 0) {
+                entry.target.classList.remove('play');
+            }
+        });
+    }, { threshold: [0, 0.2] });
+
+    cards.forEach(card => observer.observe(card));
+}
+
 // fade-up + settle as elements enter the viewport, staggered per grid
 // (progressive enhancement: without JS nothing is hidden, and
 // reduced-motion users are left alone)

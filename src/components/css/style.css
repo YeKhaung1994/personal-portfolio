@@ -545,6 +545,141 @@ span.win-btn {
     50% { opacity: 0; }
 }
 
+/* typewriter reveal — each line types out in sequence while .play is
+   set (toggled on scroll by setupCardReplay, so re-entering the
+   viewport replays it). --n = character count, --d = start delay */
+.terminal-typing .tline {
+    display: inline-block;
+    white-space: pre;
+    overflow: hidden;
+    vertical-align: bottom;
+    width: 0;
+}
+
+.terminal-typing.play .tline {
+    animation: type-line calc(var(--n) * 30ms) steps(20, end) var(--d) both;
+}
+
+@keyframes type-line {
+    to { width: calc(var(--n) * 1ch); }
+}
+
+/* hold the caret until the last line has typed */
+.terminal-typing .caret-wait {
+    opacity: 0;
+}
+
+.terminal-typing.play .caret-wait {
+    animation: caret-in 0.01s linear 4900ms forwards, blink 1.1s steps(1) 4900ms infinite;
+}
+
+@keyframes caret-in {
+    to { opacity: 1; }
+}
+
+/* json-window boot — filename types into the title bar, then the body
+   prints in; replayed the same way via .play */
+.window-anim .terminal-title {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 0;
+}
+
+.window-anim.play .terminal-title {
+    animation: type-title 0.7s steps(16, end) 0.15s both;
+}
+
+@keyframes type-title {
+    to { max-width: 16ch; }
+}
+
+.window-anim .window-body {
+    opacity: 0;
+}
+
+.window-anim.play .window-body {
+    animation: body-print 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+}
+
+@keyframes body-print {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* about.json — staged output: bio paragraphs print in order, then each
+   json key types out with its list printing right after */
+.window-typed .window-body,
+.window-typed.play .window-body {
+    opacity: 1;
+    animation: none;
+}
+
+.window-typed .window-body > p,
+.window-typed .timeline,
+.window-typed .tags,
+.window-typed .json-close {
+    opacity: 0;
+}
+
+.window-typed .json-key {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 0;
+}
+
+.window-typed.play .window-body > p,
+.window-typed.play .timeline,
+.window-typed.play .tags,
+.window-typed.play .json-close {
+    animation: body-print 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.window-typed.play .json-key {
+    animation: type-key 0.5s steps(15, end) both;
+}
+
+@keyframes type-key {
+    to { max-width: 16ch; }
+}
+
+.window-typed.play .window-body > p:nth-of-type(1) { animation-delay: 0.5s; }
+.window-typed.play .window-body > p:nth-of-type(2) { animation-delay: 0.75s; }
+.window-typed.play .window-body > p:nth-of-type(3) { animation-delay: 1s; }
+
+.window-typed.play .timeline-group:nth-child(1) .json-key { animation-delay: 1.3s; }
+
+.window-typed.play .timeline-group:nth-child(1) .timeline,
+.window-typed.play .timeline-group:nth-child(1) .json-close { animation-delay: 1.7s; }
+
+.window-typed.play .timeline-group:nth-child(2) .json-key { animation-delay: 1.9s; }
+
+.window-typed.play .timeline-group:nth-child(2) .timeline,
+.window-typed.play .timeline-group:nth-child(2) .json-close { animation-delay: 2.3s; }
+
+.window-typed.play .skill-group:nth-child(1) .json-key { animation-delay: 2.5s; }
+
+.window-typed.play .skill-group:nth-child(1) .tags,
+.window-typed.play .skill-group:nth-child(1) .json-close { animation-delay: 2.9s; }
+
+.window-typed.play .skill-group:nth-child(2) .json-key { animation-delay: 3.1s; }
+
+.window-typed.play .skill-group:nth-child(2) .tags,
+.window-typed.play .skill-group:nth-child(2) .json-close { animation-delay: 3.5s; }
+
+.window-typed.play .skill-group:nth-child(3) .json-key { animation-delay: 3.7s; }
+
+.window-typed.play .skill-group:nth-child(3) .tags,
+.window-typed.play .skill-group:nth-child(3) .json-close { animation-delay: 4.1s; }
+
 /* ============================================================
    Sections
    ============================================================ */
@@ -1040,6 +1175,49 @@ span.win-btn {
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
+    }
+
+    /* show all json cards fully, no typing or printing */
+    .terminal-typing .tline,
+    .terminal-typing.play .tline {
+        animation: none;
+        width: auto;
+    }
+
+    .terminal-typing .caret-wait,
+    .terminal-typing.play .caret-wait {
+        animation: blink 1.1s steps(1) infinite;
+        opacity: 1;
+    }
+
+    .window-anim .terminal-title,
+    .window-anim.play .terminal-title {
+        animation: none;
+        max-width: none;
+    }
+
+    .window-anim .window-body,
+    .window-anim.play .window-body {
+        animation: none;
+        opacity: 1;
+    }
+
+    .window-typed .window-body > p,
+    .window-typed .timeline,
+    .window-typed .tags,
+    .window-typed .json-close,
+    .window-typed.play .window-body > p,
+    .window-typed.play .timeline,
+    .window-typed.play .tags,
+    .window-typed.play .json-close {
+        animation: none;
+        opacity: 1;
+    }
+
+    .window-typed .json-key,
+    .window-typed.play .json-key {
+        animation: none;
+        max-width: none;
     }
 
     *,

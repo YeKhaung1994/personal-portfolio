@@ -39,7 +39,7 @@
                         <a href="https://github.com/YeKhaung1994" target="_blank" rel="noopener" aria-label="GitHub">
                             <box-icon type="logo" name="github" color="currentColor"></box-icon>
                         </a>
-                        <a href="https://www.linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/ye-khaung-5646a1194" target="_blank" rel="noopener" aria-label="LinkedIn">
                             <box-icon type="logo" name="linkedin" color="currentColor"></box-icon>
                         </a>
                         <a href="mailto:yk.yekhaung29@gmail.com" aria-label="Email">
@@ -75,13 +75,13 @@
                             </button>
                             <span class="terminal-title">profile.json</span>
                         </div>
-                        <pre class="terminal-body"><code>{
-  <span class="tk">"name"</span>: <span class="tv">"Ye Khaung"</span>,
-  <span class="tk">"role"</span>: <span class="tv">"Software Developer"</span>,
-  <span class="tk">"experience"</span>: <span class="tv">"7+ years"</span>,
-  <span class="tk">"focus"</span>: [<span class="tv">"frontend"</span>, <span class="tv">"backend"</span>],
-  <span class="tk">"status"</span>: <span class="ts">"open_to_work"</span>
-}<span class="caret" aria-hidden="true"></span></code></pre>
+                        <pre class="terminal-body terminal-typing"><code><span class="tline" style="--n: 1; --d: 0ms">{</span>
+<span class="tline" style="--n: 22; --d: 130ms">  <span class="tk">"name"</span>: <span class="tv">"Ye Khaung"</span>,</span>
+<span class="tline" style="--n: 31; --d: 890ms">  <span class="tk">"role"</span>: <span class="tv">"Software Developer"</span>,</span>
+<span class="tline" style="--n: 27; --d: 1920ms">  <span class="tk">"experience"</span>: <span class="tv">"7+ years"</span>,</span>
+<span class="tline" style="--n: 35; --d: 2830ms">  <span class="tk">"focus"</span>: [<span class="tv">"frontend"</span>, <span class="tv">"backend"</span>],</span>
+<span class="tline" style="--n: 26; --d: 3980ms">  <span class="tk">"status"</span>: <span class="ts">"open_to_work"</span></span>
+<span class="tline" style="--n: 1; --d: 4860ms">}</span><span class="caret caret-wait" aria-hidden="true"></span></code></pre>
                     </div>
                 </aside>
             </section>
@@ -89,7 +89,7 @@
             <section class="section projects" id="projects">
                 <p class="kicker">// projects</p>
                 <h2>Things I've built</h2>
-                <div class="window">
+                <div class="window window-anim">
                     <div class="window-bar">
                         <span class="win-btn win-close" aria-hidden="true">
                             <svg viewBox="0 0 10 10"><path d="M1 1l8 8M9 1l-8 8"/></svg>
@@ -116,13 +116,26 @@
                             <li>CSS</li>
                             <li>JavaScript</li>
                         </ul>
-                        <a href="https://github.com/YeKhaung1994/vue-protfolio" target="_blank" rel="noopener" class="card-link">
+                        <a href="https://github.com/YeKhaung1994/personal-portfolio" target="_blank" rel="noopener" class="card-link">
                             View source <box-icon name="right-arrow-alt" color="currentColor" size="18px"></box-icon>
                         </a>
                     </article>
 
-                    <!-- Add real project cards here — title, 1–2 sentence description,
-                         tech tags, and a link. See .claude/skills/portfolio-design. -->
+                    <article class="project-card">
+                        <div class="card-icon">
+                            <box-icon name="dice-6" color="currentColor" size="26px"></box-icon>
+                        </div>
+                        <h3>Thai Lottery</h3>
+                        <p>A Vue single-page app for checking Thai lottery draws
+                            and results.</p>
+                        <ul class="tags">
+                            <li>Vue</li>
+                            <li>JavaScript</li>
+                        </ul>
+                        <a href="https://github.com/YeKhaung1994/thai-lottery" target="_blank" rel="noopener" class="card-link">
+                            View source <box-icon name="right-arrow-alt" color="currentColor" size="18px"></box-icon>
+                        </a>
+                    </article>
 
                     <article class="project-card project-card-more">
                         <div class="card-icon">
@@ -142,7 +155,7 @@
             <section class="section about" id="about">
                 <p class="kicker">// about</p>
                 <h2>About me</h2>
-                <div class="window">
+                <div class="window window-anim window-typed">
                     <div class="window-bar">
                         <span class="win-btn win-close" aria-hidden="true">
                             <svg viewBox="0 0 10 10"><path d="M1 1l8 8M9 1l-8 8"/></svg>
@@ -248,7 +261,7 @@
             <section class="section contact" id="contact">
                 <p class="kicker">// contact</p>
                 <h2>Let's build something great</h2>
-                <div class="window">
+                <div class="window window-anim">
                     <div class="window-bar">
                         <span class="win-btn win-close" aria-hidden="true">
                             <svg viewBox="0 0 10 10"><path d="M1 1l8 8M9 1l-8 8"/></svg>
@@ -290,7 +303,7 @@
             <p>© 2026 Ye Khaung · Built with Vue · <a href="https://www.flaticon.com/free-icons/avatar" title="avatar icons" target="_blank" rel="noopener">Avatar icon by Freepik — Flaticon</a></p>
             <nav class="footer-links">
                 <a href="https://github.com/YeKhaung1994" target="_blank" rel="noopener">GitHub</a>
-                <a href="https://www.linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/ye-khaung-5646a1194" target="_blank" rel="noopener">LinkedIn</a>
                 <a href="#home">Back to top ↑</a>
             </nav>
         </footer>
@@ -321,7 +334,7 @@
   },
   <span class="tk">"links"</span>: {
     <span class="tk">"github"</span>: <a class="tv" href="https://github.com/YeKhaung1994" target="_blank" rel="noopener">"github.com/YeKhaung1994"</a>,
-    <span class="tk">"linkedin"</span>: <a class="tv" href="https://www.linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener">"linkedin.com/in/YOUR-HANDLE"</a>,
+    <span class="tk">"linkedin"</span>: <a class="tv" href="https://www.linkedin.com/in/ye-khaung-5646a1194" target="_blank" rel="noopener">"linkedin.com/in/ye-khaung-5646a1194"</a>,
     <span class="tk">"email"</span>: <a class="tv" href="mailto:yk.yekhaung29@gmail.com">"yk.yekhaung29@gmail.com"</a>
   },
   <span class="tk">"status"</span>: <span class="ts">"open_to_work"</span>
@@ -333,8 +346,14 @@
       <span class="tk">"name"</span>: <span class="tv">"Portfolio Website"</span>,
       <span class="tk">"summary"</span>: <span class="tv">"This site — JSON-view design, no UI frameworks."</span>,
       <span class="tk">"stack"</span>: [<span class="tv">"Vue 3"</span>, <span class="tv">"CSS"</span>, <span class="tv">"JavaScript"</span>],
-      <span class="tk">"source"</span>: <a class="tv" href="https://github.com/YeKhaung1994/vue-protfolio" target="_blank" rel="noopener">"github.com/YeKhaung1994/vue-protfolio"</a>,
-      <span class="tk">"live"</span>: <a class="tv" href="https://vue-protfolio.vercel.app" target="_blank" rel="noopener">"vue-protfolio.vercel.app"</a>
+      <span class="tk">"source"</span>: <a class="tv" href="https://github.com/YeKhaung1994/personal-portfolio" target="_blank" rel="noopener">"github.com/YeKhaung1994/personal-portfolio"</a>,
+      <span class="tk">"live"</span>: <a class="tv" href="https://yekhaung1994.github.io" target="_blank" rel="noopener">"yekhaung1994.github.io"</a>
+    },
+    {
+      <span class="tk">"name"</span>: <span class="tv">"Thai Lottery"</span>,
+      <span class="tk">"summary"</span>: <span class="tv">"Vue SPA for checking Thai lottery draws and results."</span>,
+      <span class="tk">"stack"</span>: [<span class="tv">"Vue"</span>, <span class="tv">"JavaScript"</span>],
+      <span class="tk">"source"</span>: <a class="tv" href="https://github.com/YeKhaung1994/thai-lottery" target="_blank" rel="noopener">"github.com/YeKhaung1994/thai-lottery"</a>
     },
     {
       <span class="tk">"name"</span>: <span class="tv">"More on GitHub"</span>,
@@ -370,7 +389,7 @@
                 <pre v-else-if="dialogView === 'contact'" class="terminal-body"><code>{
   <span class="tk">"email"</span>: <a class="tv" href="mailto:yk.yekhaung29@gmail.com">"yk.yekhaung29@gmail.com"</a>,
   <span class="tk">"github"</span>: <a class="tv" href="https://github.com/YeKhaung1994" target="_blank" rel="noopener">"github.com/YeKhaung1994"</a>,
-  <span class="tk">"linkedin"</span>: <a class="tv" href="https://www.linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener">"linkedin.com/in/YOUR-HANDLE"</a>,
+  <span class="tk">"linkedin"</span>: <a class="tv" href="https://www.linkedin.com/in/ye-khaung-5646a1194" target="_blank" rel="noopener">"linkedin.com/in/ye-khaung-5646a1194"</a>,
   <span class="tk">"open_to"</span>: [<span class="tv">"collaborations"</span>, <span class="tv">"questions"</span>, <span class="tv">"a good chat"</span>],
   <span class="tk">"status"</span>: <span class="ts">"open_to_work"</span>
 }<span class="caret" aria-hidden="true"></span></code></pre>
@@ -381,7 +400,7 @@
 </template>
 
 <script>
-import { setupNavLinks, setupMenuToggle, setupReveals } from '../js/script';
+import { setupNavLinks, setupMenuToggle, setupReveals, setupCardReplay } from '../js/script';
 import 'boxicons';
 import logoDark from '../../assets/files/ye-khaung-logo-transparent-dark.svg';
 import logoLight from '../../assets/files/ye-khaung-logo-transparent.svg';
@@ -462,6 +481,7 @@ export default {
         setupNavLinks();
         setupMenuToggle();
         setupReveals();
+        setupCardReplay();
         window.addEventListener('scroll', this.onScroll, { passive: true });
         this.onScroll();
     },
