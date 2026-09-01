@@ -39,6 +39,9 @@
                         <a href="https://github.com/YeKhaung1994" target="_blank" rel="noopener" aria-label="GitHub">
                             <box-icon type="logo" name="github" color="currentColor"></box-icon>
                         </a>
+                        <a href="https://www.linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <box-icon type="logo" name="linkedin" color="currentColor"></box-icon>
+                        </a>
                         <a href="mailto:yk.yekhaung29@gmail.com" aria-label="Email">
                             <box-icon name="envelope" color="currentColor"></box-icon>
                         </a>
@@ -47,8 +50,8 @@
 
                 <aside class="home-visual">
                     <div class="avatar-wrap">
-                        <!-- blank profile-image slot — swap the div for an <img class="avatar"> when a photo is ready -->
-                        <div class="avatar avatar-blank" aria-hidden="true"></div>
+                        <!-- temporary Flaticon avatar (attribution in footer) — swap src to ../../assets/avatar.jpg for the real photo -->
+                        <img class="avatar" src="../../assets/avatar-temp.png" alt="Illustrated avatar of Ye Khaung" width="112" height="112">
                         <svg class="avatar-ring-text" viewBox="0 0 180 180" aria-hidden="true">
                             <defs>
                                 <path id="ring-path" d="M90,90 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0" />
@@ -168,6 +171,41 @@
                             Away from the keyboard, I'm usually chasing new music, a football,
                             or whatever technology is about to change how we build.
                         </p>
+                        <div class="about-timeline">
+                            <div class="timeline-group">
+                                <h3 class="json-key">"experience": [</h3>
+                                <ol class="timeline">
+                                    <li class="timeline-item">
+                                        <div class="timeline-head">
+                                            <h4>Senior Software Developer</h4>
+                                            <span class="timeline-period">2017 — present</span>
+                                        </div>
+                                        <p class="timeline-org">Fusion Solution Company</p>
+                                    </li>
+                                    <li class="timeline-item">
+                                        <div class="timeline-head">
+                                            <h4>Software Developer</h4>
+                                            <span class="timeline-period">2016 — 2017</span>
+                                        </div>
+                                        <p class="timeline-org">Myanmar Information Technology</p>
+                                    </li>
+                                </ol>
+                                <p class="json-close">],</p>
+                            </div>
+                            <div class="timeline-group">
+                                <h3 class="json-key">"education": [</h3>
+                                <ol class="timeline">
+                                    <li class="timeline-item">
+                                        <div class="timeline-head">
+                                            <h4>B.E — Information Science and Technology</h4>
+                                            <span class="timeline-period">2010 — 2016</span>
+                                        </div>
+                                        <p class="timeline-org">Yatanarpon Cyber City</p>
+                                    </li>
+                                </ol>
+                                <p class="json-close">],</p>
+                            </div>
+                        </div>
                         <div class="skill-groups">
                             <div class="skill-group">
                                 <h3 class="json-key">"frontend": [</h3>
@@ -247,9 +285,10 @@
         </button>
 
         <footer class="footer">
-            <p>© 2026 Ye Khaung · Built with Vue</p>
+            <p>© 2026 Ye Khaung · Built with Vue · <a href="https://www.flaticon.com/free-icons/avatar" title="avatar icons" target="_blank" rel="noopener">Avatar icon by Freepik — Flaticon</a></p>
             <nav class="footer-links">
                 <a href="https://github.com/YeKhaung1994" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener">LinkedIn</a>
                 <a href="#home">Back to top ↑</a>
             </nav>
         </footer>
@@ -280,6 +319,7 @@
   },
   <span class="tk">"links"</span>: {
     <span class="tk">"github"</span>: <a class="tv" href="https://github.com/YeKhaung1994" target="_blank" rel="noopener">"github.com/YeKhaung1994"</a>,
+    <span class="tk">"linkedin"</span>: <a class="tv" href="https://www.linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener">"linkedin.com/in/YOUR-HANDLE"</a>,
     <span class="tk">"email"</span>: <a class="tv" href="mailto:yk.yekhaung29@gmail.com">"yk.yekhaung29@gmail.com"</a>
   },
   <span class="tk">"status"</span>: <span class="ts">"open_to_work"</span>
@@ -308,6 +348,13 @@
     <span class="tv">"Seven years taking products from first idea to production."</span>,
     <span class="tv">"Off duty: new music, football, emerging tech."</span>
   ],
+  <span class="tk">"experience"</span>: [
+    <span class="tv">"Senior Software Developer @ Fusion Solution Company (2017—present)"</span>,
+    <span class="tv">"Software Developer @ Myanmar Information Technology (2016—2017)"</span>
+  ],
+  <span class="tk">"education"</span>: [
+    <span class="tv">"B.E — Information Science and Technology, Yatanarpon Cyber City (2010—2016)"</span>
+  ],
   <span class="tk">"skills"</span>: {
     <span class="tk">"frontend"</span>: [<span class="tv">"JavaScript"</span>, <span class="tv">"TypeScript"</span>, <span class="tv">"Vue"</span>,
                  <span class="tv">"React"</span>, <span class="tv">"Angular"</span>, <span class="tv">"Ionic"</span>],
@@ -321,6 +368,7 @@
                 <pre v-else-if="dialogView === 'contact'" class="terminal-body"><code>{
   <span class="tk">"email"</span>: <a class="tv" href="mailto:yk.yekhaung29@gmail.com">"yk.yekhaung29@gmail.com"</a>,
   <span class="tk">"github"</span>: <a class="tv" href="https://github.com/YeKhaung1994" target="_blank" rel="noopener">"github.com/YeKhaung1994"</a>,
+  <span class="tk">"linkedin"</span>: <a class="tv" href="https://www.linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener">"linkedin.com/in/YOUR-HANDLE"</a>,
   <span class="tk">"open_to"</span>: [<span class="tv">"collaborations"</span>, <span class="tv">"questions"</span>, <span class="tv">"a good chat"</span>],
   <span class="tk">"status"</span>: <span class="ts">"open_to_work"</span>
 }<span class="caret" aria-hidden="true"></span></code></pre>
